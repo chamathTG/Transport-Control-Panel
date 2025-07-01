@@ -52,6 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         main = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Transport Control Panel");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));

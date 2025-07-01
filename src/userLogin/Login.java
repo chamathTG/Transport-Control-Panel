@@ -44,6 +44,7 @@ public class Login extends javax.swing.JFrame {
         backgroundLb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Transport Control Panel");
         setIconImages(null);
         setPreferredSize(new java.awt.Dimension(800, 700));
         setResizable(false);
