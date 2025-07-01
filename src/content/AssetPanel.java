@@ -4,6 +4,12 @@
  */
 package content;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -54,7 +60,7 @@ public class AssetPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btnUpdate = new javax.swing.JButton();
@@ -136,17 +142,17 @@ public class AssetPanel extends javax.swing.JPanel {
         });
         add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 90, 40));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("SAVE");
-        jButton4.setBorder(null);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setBackground(new java.awt.Color(0, 0, 0));
+        btnSave.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
+        btnSave.setText("SAVE");
+        btnSave.setBorder(null);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 100, 40));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 100, 40));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,9 +205,26 @@ public class AssetPanel extends javax.swing.JPanel {
                txtNo.setText("");
     }//GEN-LAST:event_btnDelActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+         File file = new File("data/asset_data.txt");
+        try {
+            FileWriter fw = new FileWriter("data/asset_data.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i=0; i<jTable1Asset.getRowCount(); i++){//Rows Table
+                for(int j = 0; j<jTable1Asset.getColumnCount(); j++){
+                  bw.write(jTable1Asset.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         if(txtRouteId.getText().equals("")||txtType.getText().equals("")||txtNo.getText().equals("")){
@@ -251,9 +274,9 @@ public class AssetPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

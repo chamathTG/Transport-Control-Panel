@@ -74,12 +74,12 @@ public class SchedulePanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Schedule ID");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 340, 110, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 340, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NO");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 390, 40, 29));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 40, 29));
 
         jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
