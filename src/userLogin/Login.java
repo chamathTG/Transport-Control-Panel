@@ -4,6 +4,8 @@
  */
 package userLogin;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hirusha
@@ -35,12 +37,10 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        userIdTxt = new javax.swing.JTextField();
-        passwordTxt = new javax.swing.JTextField();
-        frogotLb = new javax.swing.JLabel();
-        loginBtn = new javax.swing.JButton();
-        clearBtn = new javax.swing.JButton();
-        adminLb = new javax.swing.JLabel();
+        txtUser = new javax.swing.JTextField();
+        btnLogin = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        txtPass = new javax.swing.JPasswordField();
         backgroundLb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,38 +66,41 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
 
-        userIdTxt.setBackground(new java.awt.Color(236, 236, 236));
-        userIdTxt.setFont(new java.awt.Font("Poppins", 0, 20)); // NOI18N
-        userIdTxt.setToolTipText("");
-        userIdTxt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel1.add(userIdTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 289, 44));
+        txtUser.setBackground(new java.awt.Color(255, 255, 255));
+        txtUser.setFont(new java.awt.Font("Poppins", 0, 20)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(0, 0, 0));
+        txtUser.setToolTipText("");
+        txtUser.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 289, 50));
 
-        passwordTxt.setBackground(new java.awt.Color(236, 236, 236));
-        passwordTxt.setFont(new java.awt.Font("Poppins", 0, 20)); // NOI18N
-        passwordTxt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanel1.add(passwordTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 326, 289, 44));
+        btnLogin.setBackground(new java.awt.Color(249, 93, 44));
+        btnLogin.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("LOGIN");
+        btnLogin.setBorder(null);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 110, 43));
 
-        frogotLb.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
-        frogotLb.setForeground(new java.awt.Color(34, 153, 233));
-        frogotLb.setText("Forgot Password");
-        jPanel1.add(frogotLb, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 388, 215, -1));
+        btnClear.setBackground(new java.awt.Color(249, 93, 44));
+        btnClear.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
+        btnClear.setForeground(new java.awt.Color(255, 255, 255));
+        btnClear.setText("CLEAR");
+        btnClear.setBorder(null);
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 110, 43));
 
-        loginBtn.setBackground(new java.awt.Color(249, 93, 44));
-        loginBtn.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
-        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
-        loginBtn.setText("LOGIN");
-        loginBtn.setBorder(null);
-        jPanel1.add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 471, 104, 43));
-
-        clearBtn.setBackground(new java.awt.Color(249, 93, 44));
-        clearBtn.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
-        clearBtn.setForeground(new java.awt.Color(255, 255, 255));
-        clearBtn.setText("CLEAR");
-        clearBtn.setBorder(null);
-        jPanel1.add(clearBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 471, 104, 43));
-
-        adminLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userLogin/admin.png"))); // NOI18N
-        jPanel1.add(adminLb, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 30, 80, 60));
+        txtPass.setBackground(new java.awt.Color(255, 255, 255));
+        txtPass.setForeground(new java.awt.Color(0, 0, 0));
+        txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 290, 50));
 
         backgroundLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userLogin/loginimg.png"))); // NOI18N
         jPanel1.add(backgroundLb, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 610));
@@ -116,6 +119,30 @@ public class Login extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1084, 620));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        if(txtUser.getText().equals("")&&txtPass.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "User ID and Password is empty!\nPlease enter valid details");
+        }
+        else if(txtUser.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Empty User ID!\nPlease enter valid details");
+        }
+        else if(txtPass.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Empty Password!\nPlease enter valid details");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Incorrect User ID or Password!","Message",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        txtUser.setText("");
+        txtPass.setText("");
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,16 +181,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adminLb;
     private javax.swing.JLabel backgroundLb;
-    private javax.swing.JButton clearBtn;
-    private javax.swing.JLabel frogotLb;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton loginBtn;
-    private javax.swing.JTextField passwordTxt;
-    private javax.swing.JTextField userIdTxt;
+    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -74,20 +74,20 @@ public class AssetPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 720, 200));
 
-        jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 1, 21)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Type");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 90, -1, 30));
 
         txtNo.setBackground(new java.awt.Color(236, 236, 236));
         txtNo.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
         txtNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 150, 32));
 
-        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 1, 21)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 0, 19)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NO");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, 50));
 
         txtType.setBackground(new java.awt.Color(236, 236, 236));
         txtType.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
@@ -99,10 +99,10 @@ public class AssetPanel extends javax.swing.JPanel {
         txtRouteId.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(txtRouteId, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 150, 32));
 
-        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 1, 21)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 0, 19)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Route ID");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 30));
 
         jButton1.setBackground(new java.awt.Color(249, 93, 44));
         jButton1.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
@@ -134,7 +134,7 @@ public class AssetPanel extends javax.swing.JPanel {
                 btnDelActionPerformed(evt);
             }
         });
-        add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 80, 40));
+        add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 90, 40));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 0));
         jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
@@ -175,7 +175,7 @@ public class AssetPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 90, 40));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 90, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
