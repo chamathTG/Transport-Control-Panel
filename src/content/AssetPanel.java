@@ -187,32 +187,37 @@ public class AssetPanel extends javax.swing.JPanel {
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
         DefaultTableModel tbModel = (DefaultTableModel)jTable1Asset.getModel();
        
-       if(jTable1Asset.getSelectedRowCount()==1){
-           tbModel.removeRow(jTable1Asset.getSelectedRow());      
+       if(jTable1Asset.getSelectedRowCount()==1)
+       {
+           tbModel.removeRow(jTable1Asset.getSelectedRow());
        }
-       
-       else{
-           if(jTable1Asset.getSelectedRow()==0){
+       else
+       {
+           if(jTable1Asset.getSelectedRow()==0)
+           {
                JOptionPane.showMessageDialog(this, "The table is empty");
            } 
-           else{
+           else
+           {
                JOptionPane.showMessageDialog(this, "Please select a single row to delete");
            }
        }
-       
               txtRouteId.setText("");
-               txtType.setText("");
-               txtNo.setText("");
+              txtType.setText("");
+              txtNo.setText("");
     }//GEN-LAST:event_btnDelActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
          File file = new File("data/asset_data.txt");
-        try {
+        try
+        {
             FileWriter fw = new FileWriter("data/asset_data.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
-            for(int i=0; i<jTable1Asset.getRowCount(); i++){//Rows Table
-                for(int j = 0; j<jTable1Asset.getColumnCount(); j++){
+            for(int i=0; i<jTable1Asset.getRowCount(); i++)
+            {//Rows Table
+                for(int j = 0; j<jTable1Asset.getColumnCount(); j++)
+                {
                   bw.write(jTable1Asset.getValueAt(i, j).toString()+" ");
                 }
                 bw.newLine();
@@ -221,34 +226,37 @@ public class AssetPanel extends javax.swing.JPanel {
             bw.close();
             fw.close();
             
-        } catch (IOException ex) {
+        }
+        catch (IOException ex)
+        {
             Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        if(txtRouteId.getText().equals("")||txtType.getText().equals("")||txtNo.getText().equals("")){
-        JOptionPane.showMessageDialog(this, "Please enter all the details");
+        if(txtRouteId.getText().equals("")||txtType.getText().equals("")||txtNo.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Please enter all the details");
         }
-        
-        else{
-               String data[] = {txtRouteId.getText(),txtType.getText(),txtNo.getText() };
-               DefaultTableModel tbModel = (DefaultTableModel)jTable1Asset.getModel();
+        else
+        {
+            String data[] = {txtRouteId.getText(),txtType.getText(),txtNo.getText()};
+            DefaultTableModel tbModel = (DefaultTableModel)jTable1Asset.getModel();
                
-               tbModel.addRow(data);
-               JOptionPane.showMessageDialog(this, "Data added successfully");
+            tbModel.addRow(data);
+            JOptionPane.showMessageDialog(this, "Data added successfully");
                
-               txtRouteId.setText("");
-               txtType.setText("");
-               txtNo.setText("");
-               
+            txtRouteId.setText("");
+            txtType.setText("");
+            txtNo.setText("");   
         }   
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         int selectedRow = jTable1Asset.getSelectedRow();
 
-        if (selectedRow == -1) {
+        if (selectedRow == -1)
+        {
         JOptionPane.showMessageDialog(this, "Please select a row to update.");
         return;
         }
