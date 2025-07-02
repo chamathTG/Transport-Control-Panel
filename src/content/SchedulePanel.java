@@ -26,9 +26,6 @@ public class SchedulePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -47,49 +44,25 @@ public class SchedulePanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "RouteID", "Type", "No"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 720, 209));
-
-        jButton1.setBackground(new java.awt.Color(249, 93, 44));
-        jButton1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("IMPORT ASSET");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 165, 40));
-
         jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Schedule ID");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 340, 120, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 120, 30));
 
         jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NO");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 40, 29));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 40, 29));
 
         jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Date");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Time");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
@@ -99,22 +72,22 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 134, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 180, 30));
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 134, 30));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 180, 30));
 
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 134, 30));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 180, 30));
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 134, 30));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 180, 30));
 
         jButton2.setBackground(new java.awt.Color(249, 93, 44));
         jButton2.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
@@ -126,21 +99,21 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, 90, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 130, 40));
 
         jButton3.setBackground(new java.awt.Color(249, 93, 44));
         jButton3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("DELETE");
         jButton3.setBorder(null);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, 90, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 130, 40));
 
         jButton4.setBackground(new java.awt.Color(249, 93, 49));
         jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("UPDATE");
         jButton4.setBorder(null);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, 90, 40));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 130, 40));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -152,7 +125,7 @@ public class SchedulePanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 300, 190));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 720, 190));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 0));
         jButton5.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
@@ -164,12 +137,8 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 90, 40));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 130, 40));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -185,7 +154,6 @@ public class SchedulePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -194,9 +162,7 @@ public class SchedulePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
