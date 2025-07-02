@@ -203,10 +203,13 @@ public class AssetPanel extends javax.swing.JPanel {
             bw.close();
             fw.close();
             
+            JOptionPane.showMessageDialog(this, "Saved successfully.");
+            
         }
         catch (IOException ex)
         {
             Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 

@@ -4,6 +4,15 @@
  */
 package content;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hirusha
@@ -15,7 +24,21 @@ public class SchedulePanel extends javax.swing.JPanel {
      */
     public SchedulePanel() {
         initComponents();
+      jTableShedule.addMouseListener(new java.awt.event.MouseAdapter() {
+    @Override
+    public void mouseClicked(java.awt.event.MouseEvent evt) {
+        int selectedRow = jTableShedule.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) jTableShedule.getModel();
+
+        txtSid.setText(model.getValueAt(selectedRow, 0).toString());
+        textNo.setText(model.getValueAt(selectedRow, 1).toString());
+        txtDate.setText(model.getValueAt(selectedRow, 2).toString());
+        textTime.setText(model.getValueAt(selectedRow, 3).toString()); 
+        }
+     });
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,16 +53,16 @@ public class SchedulePanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        textTime = new javax.swing.JTextField();
+        txtSid = new javax.swing.JTextField();
+        textNo = new javax.swing.JTextField();
+        txtDate = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
+        btnUp = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableShedule = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,56 +87,70 @@ public class SchedulePanel extends javax.swing.JPanel {
         jLabel4.setText("Time");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 490, 60, -1));
 
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textTime.setBackground(new java.awt.Color(236, 236, 236));
+        textTime.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        textTime.setForeground(new java.awt.Color(0, 0, 0));
+        textTime.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        textTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textTimeActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 190, 30));
+        add(textTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 190, 30));
 
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 190, 30));
+        txtSid.setBackground(new java.awt.Color(236, 236, 236));
+        txtSid.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        txtSid.setForeground(new java.awt.Color(0, 0, 0));
+        txtSid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtSid, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 190, 30));
 
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 190, 30));
+        textNo.setBackground(new java.awt.Color(236, 236, 236));
+        textNo.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        textNo.setForeground(new java.awt.Color(0, 0, 0));
+        textNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(textNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 190, 30));
 
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 190, 30));
+        txtDate.setBackground(new java.awt.Color(236, 236, 236));
+        txtDate.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        txtDate.setForeground(new java.awt.Color(0, 0, 0));
+        txtDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 190, 30));
 
-        jButton2.setBackground(new java.awt.Color(249, 93, 44));
-        jButton2.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("ADD");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setBackground(new java.awt.Color(249, 93, 44));
+        btnAdd.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setText("ADD");
+        btnAdd.setBorder(null);
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 140, 40));
+        add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 140, 40));
 
-        jButton3.setBackground(new java.awt.Color(249, 93, 44));
-        jButton3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("DELETE");
-        jButton3.setBorder(null);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
+        btnDel.setBackground(new java.awt.Color(249, 93, 44));
+        btnDel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(255, 255, 255));
+        btnDel.setText("DELETE");
+        btnDel.setBorder(null);
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
+        add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
 
-        jButton4.setBackground(new java.awt.Color(249, 93, 49));
-        jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("UPDATE");
-        jButton4.setBorder(null);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 140, 40));
+        btnUp.setBackground(new java.awt.Color(249, 93, 49));
+        btnUp.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnUp.setForeground(new java.awt.Color(255, 255, 255));
+        btnUp.setText("UPDATE");
+        btnUp.setBorder(null);
+        btnUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpActionPerformed(evt);
+            }
+        });
+        add(btnUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 140, 40));
 
         jTableShedule.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,50 +160,151 @@ public class SchedulePanel extends javax.swing.JPanel {
                 "ScheduleID", "No", "Date", "Time"
             }
         ));
+        jTableShedule.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableSheduleMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTableShedule);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 720, 190));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 0));
-        jButton5.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("SAVE");
-        jButton5.setBorder(null);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setBackground(new java.awt.Color(0, 0, 0));
+        btnSave.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
+        btnSave.setText("SAVE");
+        btnSave.setBorder(null);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 140, 40));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 140, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTimeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textTimeActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        if (txtSid.getText().equals("") || textNo.getText().equals("") || txtDate.getText().equals("") || textTime.getText().equals("")) {
+        JOptionPane.showMessageDialog(this, "Please enter all the details");
+        } 
+          else {
+                 String data[] = {txtSid.getText(),textNo.getText(),txtDate.getText(),textTime.getText()};
+                 DefaultTableModel tbModel = (DefaultTableModel)jTableShedule.getModel();
+                 
+                 tbModel.addRow(data);
+                 JOptionPane.showMessageDialog(this, "Data added successfully");
+                 
+                 txtSid.setText("");
+                 textNo.setText("");
+                 txtDate.setText("");
+                 textTime.setText("");
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        File file = new File("data/schedule_data.txt");
+        try
+        {
+            FileWriter fw = new FileWriter("schedule_data.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i=0; i<jTableShedule.getRowCount(); i++)
+            {//Rows Table
+                for(int j = 0; j<jTableShedule.getColumnCount(); j++)
+                {
+                  bw.write(jTableShedule.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+            JOptionPane.showMessageDialog(this, "Saved successfully.");
+            
+        }
+        catch (IOException ex)
+        {
+            Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
+
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        DefaultTableModel tbModel = (DefaultTableModel)jTableShedule.getModel();
+        
+        if(jTableShedule.getSelectedRowCount()==1)
+       {
+           tbModel.removeRow(jTableShedule.getSelectedRow());
+       }
+        
+        else
+       {
+           if(jTableShedule.getSelectedRow()==0)
+           {
+               JOptionPane.showMessageDialog(this, "The table is empty");
+           }
+           
+           else
+           {
+               JOptionPane.showMessageDialog(this, "Please select a single row to delete");
+           }
+           
+       }
+        
+        txtSid.setText("");
+        textNo.setText("");
+        txtDate.setText("");
+        textTime.setText("");
+    }//GEN-LAST:event_btnDelActionPerformed
+
+    private void btnUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpActionPerformed
+       int selectedRow = jTableShedule.getSelectedRow();
+       if (selectedRow == -1)
+        {
+        JOptionPane.showMessageDialog(this, "Please select a row to update.");
+        return;
+        }
+       
+        DefaultTableModel model = (DefaultTableModel) jTableShedule.getModel();
+       
+        model.setValueAt(txtSid.getText(), selectedRow, 0);
+        model.setValueAt(textNo.getText(), selectedRow, 1);
+        model.setValueAt(txtDate.getText(), selectedRow, 2);
+        model.setValueAt(textTime.getText(), selectedRow, 3);
+        
+        JOptionPane.showMessageDialog(this, "Row updated successfully.");
+        
+        txtSid.setText("");
+        textNo.setText("");
+        txtDate.setText("");
+        textTime.setText("");
+
+    }//GEN-LAST:event_btnUpActionPerformed
+
+    private void jTableSheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSheduleMouseClicked
+  
+    }//GEN-LAST:event_jTableSheduleMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableShedule;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField textNo;
+    private javax.swing.JTextField textTime;
+    private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtSid;
     // End of variables declaration//GEN-END:variables
 }
