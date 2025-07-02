@@ -47,22 +47,22 @@ public class SchedulePanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Schedule ID");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 120, 30));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 130, 30));
 
         jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("NO");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 40, 29));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 50, 29));
 
         jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Date");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 440, 50, -1));
 
         jLabel4.setFont(new java.awt.Font("Poppins SemiBold", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Time");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 490, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 490, 60, -1));
 
         jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
@@ -72,22 +72,22 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 180, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 490, 190, 30));
 
         jTextField2.setBackground(new java.awt.Color(204, 204, 204));
         jTextField2.setForeground(new java.awt.Color(0, 0, 0));
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 180, 30));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 190, 30));
 
         jTextField3.setBackground(new java.awt.Color(204, 204, 204));
         jTextField3.setForeground(new java.awt.Color(0, 0, 0));
         jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 180, 30));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 190, 30));
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jTextField4.setForeground(new java.awt.Color(0, 0, 0));
         jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 180, 30));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 190, 30));
 
         jButton2.setBackground(new java.awt.Color(249, 93, 44));
         jButton2.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
