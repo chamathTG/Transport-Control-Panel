@@ -8,19 +8,22 @@ import content.AlertPanel;
 import content.AssetPanel;
 import content.RoutePanel;
 import content.SchedulePanel;
+import userLogin.Login;
 
 /**
  *
  * @author Hirusha
  */
-public class Dashboard extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame
+{
 
     AssetPanel a = new AssetPanel();
     SchedulePanel b = new SchedulePanel();
     RoutePanel c = new RoutePanel();
     AlertPanel d = new AlertPanel();
     
-    public Dashboard() {
+    public Dashboard()
+    {
         initComponents();
         main.add(a);
         main.add(b);
@@ -48,7 +51,7 @@ public class Dashboard extends javax.swing.JFrame {
         routeBtn3 = new javax.swing.JButton();
         alertBtn3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         main = new javax.swing.JLayeredPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -106,10 +109,15 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(226, 226, 226));
         jLabel1.setText("Control Panel");
 
-        jButton1.setBackground(new java.awt.Color(226, 226, 226));
-        jButton1.setFont(new java.awt.Font("Poppins SemiBold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Log Out");
+        btnLogout.setBackground(new java.awt.Color(226, 226, 226));
+        btnLogout.setFont(new java.awt.Font("Poppins SemiBold", 0, 18)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogout.setText("Log Out");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -121,7 +129,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jButton1)
+                .addComponent(btnLogout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
@@ -146,7 +154,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(alertBtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnLogout)
                 .addGap(56, 56, 56))
         );
 
@@ -187,6 +195,11 @@ public class Dashboard extends javax.swing.JFrame {
         d.setVisible(true);
     }//GEN-LAST:event_alertBtn3ActionPerformed
 
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        Login move = new Login();
+        move.setVisible(true);
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,7 +238,7 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alertBtn3;
     private javax.swing.JButton assetBtn1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLayeredPane main;

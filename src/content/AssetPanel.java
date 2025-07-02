@@ -17,27 +17,29 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Hirusha
  */
-public class AssetPanel extends javax.swing.JPanel {
+public class AssetPanel extends javax.swing.JPanel
+{
 
     /**
      * Creates new form AssetPanel
      */
-    public AssetPanel() {
+    public AssetPanel()
+    {
         initComponents();
         
-        jTable1Asset.addMouseListener(new java.awt.event.MouseAdapter() {
-        @Override
-        public void mouseClicked(java.awt.event.MouseEvent evt) {
-        int selectedRow = jTable1Asset.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) jTable1Asset.getModel();
+        jTable1Asset.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                int selectedRow = jTable1Asset.getSelectedRow();
+                DefaultTableModel model = (DefaultTableModel) jTable1Asset.getModel();
 
-        txtRouteId.setText(model.getValueAt(selectedRow, 0).toString());
-        txtType.setText(model.getValueAt(selectedRow, 1).toString());
-        txtNo.setText(model.getValueAt(selectedRow, 2).toString());
-    }
-});
-        
-
+                txtRouteId.setText(model.getValueAt(selectedRow, 0).toString());
+                txtType.setText(model.getValueAt(selectedRow, 1).toString());
+                txtNo.setText(model.getValueAt(selectedRow, 2).toString());
+            }
+        });
     }
 
     /**
@@ -164,53 +166,52 @@ public class AssetPanel extends javax.swing.JPanel {
     private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
         DefaultTableModel tbModel = (DefaultTableModel)jTable1Asset.getModel();
        
-       if(jTable1Asset.getSelectedRowCount()==1)
-       {
-           tbModel.removeRow(jTable1Asset.getSelectedRow());
-       }
-       else
-       {
-           if(jTable1Asset.getSelectedRow()==0)
-           {
-               JOptionPane.showMessageDialog(this, "The table is empty");
-           } 
-           else
-           {
-               JOptionPane.showMessageDialog(this, "Please select a single row to delete");
-           }
-       }
-              txtRouteId.setText("");
-              txtType.setText("");
-              txtNo.setText("");
+        if(jTable1Asset.getSelectedRowCount()==1)
+        {
+            tbModel.removeRow(jTable1Asset.getSelectedRow());
+        }
+        else
+        {
+            if(jTable1Asset.getSelectedRow()==0)
+            {
+                JOptionPane.showMessageDialog(this, "The table is empty");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Please select a single row to delete");
+            }
+        }
+        txtRouteId.setText("");
+        txtType.setText("");
+        txtNo.setText("");
     }//GEN-LAST:event_btnDelActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
          File file = new File("data/asset_data.txt");
-        try
-        {
-            FileWriter fw = new FileWriter("data/asset_data.txt");
-            BufferedWriter bw = new BufferedWriter(fw);
+         try
+         {
+             FileWriter fw = new FileWriter("data/asset_data.txt");
+             BufferedWriter bw = new BufferedWriter(fw);
             
-            for(int i=0; i<jTable1Asset.getRowCount(); i++)
-            {//Rows Table
-                for(int j = 0; j<jTable1Asset.getColumnCount(); j++)
-                {
-                  bw.write(jTable1Asset.getValueAt(i, j).toString()+" ");
-                }
-                bw.newLine();
-            }
+             for(int i=0; i<jTable1Asset.getRowCount(); i++)
+             {//Rows Table
+                 for(int j = 0; j<jTable1Asset.getColumnCount(); j++)
+                 {
+                     bw.write(jTable1Asset.getValueAt(i, j).toString()+" ");
+                 }
+                 bw.newLine();
+             }
             
             bw.close();
             fw.close();
             
             JOptionPane.showMessageDialog(this, "Saved successfully.");
-            
-        }
-        catch (IOException ex)
-        {
-            Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
-        }
+         }
+         catch (IOException ex)
+         {
+             Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
+             JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
+         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -237,8 +238,8 @@ public class AssetPanel extends javax.swing.JPanel {
 
         if (selectedRow == -1)
         {
-        JOptionPane.showMessageDialog(this, "Please select a row to update.");
-        return;
+            JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            return;
         }
     
         DefaultTableModel model = (DefaultTableModel) jTable1Asset.getModel();

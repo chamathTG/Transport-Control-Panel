@@ -17,29 +17,31 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Hirusha
  */
-public class SchedulePanel extends javax.swing.JPanel {
+public class SchedulePanel extends javax.swing.JPanel
+{
 
     /**
      * Creates new form SchedulePanel
      */
-    public SchedulePanel() {
+    public SchedulePanel()
+    {
         initComponents();
-      jTableShedule.addMouseListener(new java.awt.event.MouseAdapter() {
-    @Override
-    public void mouseClicked(java.awt.event.MouseEvent evt) {
-        int selectedRow = jTableShedule.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) jTableShedule.getModel();
+        jTableShedule.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                int selectedRow = jTableShedule.getSelectedRow();
+                DefaultTableModel model = (DefaultTableModel) jTableShedule.getModel();
 
-        txtSid.setText(model.getValueAt(selectedRow, 0).toString());
-        textNo.setText(model.getValueAt(selectedRow, 1).toString());
-        txtDate.setText(model.getValueAt(selectedRow, 2).toString());
-        textTime.setText(model.getValueAt(selectedRow, 3).toString()); 
-        }
-     });
+                txtSid.setText(model.getValueAt(selectedRow, 0).toString());
+                textNo.setText(model.getValueAt(selectedRow, 1).toString());
+                txtDate.setText(model.getValueAt(selectedRow, 2).toString());
+                textTime.setText(model.getValueAt(selectedRow, 3).toString());
+            }
+        });
     }
     
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -187,20 +189,22 @@ public class SchedulePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_textTimeActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        if (txtSid.getText().equals("") || textNo.getText().equals("") || txtDate.getText().equals("") || textTime.getText().equals("")) {
-        JOptionPane.showMessageDialog(this, "Please enter all the details");
-        } 
-          else {
-                 String data[] = {txtSid.getText(),textNo.getText(),txtDate.getText(),textTime.getText()};
-                 DefaultTableModel tbModel = (DefaultTableModel)jTableShedule.getModel();
+        if (txtSid.getText().equals("") || textNo.getText().equals("") || txtDate.getText().equals("") || textTime.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Please enter all the details");
+        }
+        else
+        {
+            String data[] = {txtSid.getText(),textNo.getText(),txtDate.getText(),textTime.getText()};
+            DefaultTableModel tbModel = (DefaultTableModel)jTableShedule.getModel();
                  
-                 tbModel.addRow(data);
-                 JOptionPane.showMessageDialog(this, "Data added successfully");
+            tbModel.addRow(data);
+            JOptionPane.showMessageDialog(this, "Data added successfully");
                  
-                 txtSid.setText("");
-                 textNo.setText("");
-                 txtDate.setText("");
-                 textTime.setText("");
+            txtSid.setText("");
+            textNo.setText("");
+            txtDate.setText("");
+            textTime.setText("");
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -238,12 +242,11 @@ public class SchedulePanel extends javax.swing.JPanel {
         DefaultTableModel tbModel = (DefaultTableModel)jTableShedule.getModel();
         
         if(jTableShedule.getSelectedRowCount()==1)
-       {
+        {
            tbModel.removeRow(jTableShedule.getSelectedRow());
-       }
-        
+        }
         else
-       {
+        {
            if(jTableShedule.getSelectedRow()==0)
            {
                JOptionPane.showMessageDialog(this, "The table is empty");
@@ -253,8 +256,7 @@ public class SchedulePanel extends javax.swing.JPanel {
            {
                JOptionPane.showMessageDialog(this, "Please select a single row to delete");
            }
-           
-       }
+        }
         
         txtSid.setText("");
         textNo.setText("");
@@ -266,8 +268,8 @@ public class SchedulePanel extends javax.swing.JPanel {
        int selectedRow = jTableShedule.getSelectedRow();
        if (selectedRow == -1)
         {
-        JOptionPane.showMessageDialog(this, "Please select a row to update.");
-        return;
+            JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            return;
         }
        
         DefaultTableModel model = (DefaultTableModel) jTableShedule.getModel();
@@ -287,7 +289,7 @@ public class SchedulePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnUpActionPerformed
 
     private void jTableSheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableSheduleMouseClicked
-  
+
     }//GEN-LAST:event_jTableSheduleMouseClicked
 
 

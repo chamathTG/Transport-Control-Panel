@@ -17,26 +17,30 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Hirusha
  */
-public class RoutePanel extends javax.swing.JPanel {
+public class RoutePanel extends javax.swing.JPanel
+{
 
     /**
      * Creates new form RoutePanel
      */
-    public RoutePanel() {
+    public RoutePanel()
+    {
         initComponents();
         
-        jTableR.addMouseListener(new java.awt.event.MouseAdapter() {
-    @Override
-    public void mouseClicked(java.awt.event.MouseEvent evt) {
-        int selectedRow = jTableR.getSelectedRow();
-        DefaultTableModel model = (DefaultTableModel) jTableR.getModel();
+        jTableR.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                int selectedRow = jTableR.getSelectedRow();
+                DefaultTableModel model = (DefaultTableModel) jTableR.getModel();
 
-        txtRid.setText(model.getValueAt(selectedRow, 0).toString());
-        textDist.setText(model.getValueAt(selectedRow, 1).toString());
-        txtSloc.setText(model.getValueAt(selectedRow, 2).toString());
-        txtEloc.setText(model.getValueAt(selectedRow, 3).toString()); 
-    }
-});
+                txtRid.setText(model.getValueAt(selectedRow, 0).toString());
+                textDist.setText(model.getValueAt(selectedRow, 1).toString());
+                txtSloc.setText(model.getValueAt(selectedRow, 2).toString());
+                txtEloc.setText(model.getValueAt(selectedRow, 3).toString()); 
+            }
+        });
     }
 
     /**
@@ -212,7 +216,7 @@ public class RoutePanel extends javax.swing.JPanel {
             {//Rows Table
                 for(int j = 0; j<jTableR.getColumnCount(); j++)
                 {
-                  bw.write(jTableR.getValueAt(i, j).toString()+" ");
+                    bw.write(jTableR.getValueAt(i, j).toString()+" ");
                 }
                 bw.newLine();
             }
@@ -221,9 +225,8 @@ public class RoutePanel extends javax.swing.JPanel {
             fw.close();
             
             JOptionPane.showMessageDialog(this, "Saved successfully.");
-            
         }
-        catch (IOException ex)
+        catch(IOException ex)
         {
             Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
@@ -255,12 +258,12 @@ public class RoutePanel extends javax.swing.JPanel {
         DefaultTableModel tbModel = (DefaultTableModel)jTableR.getModel();
         
         if(jTableR.getSelectedRowCount()==1)
-       {
+        {
            tbModel.removeRow(jTableR.getSelectedRow());
-       }
+        }
         
         else
-       {
+        {
            if(jTableR.getSelectedRow()==0)
            {
                JOptionPane.showMessageDialog(this, "The table is empty");
@@ -269,20 +272,21 @@ public class RoutePanel extends javax.swing.JPanel {
            {
                JOptionPane.showMessageDialog(this, "Please select a single row to delete");
            }
-       }
+        }
         
-            txtRid.setText("");
-            textDist.setText("");
-            txtSloc.setText("");
-            txtEloc.setText("");
+        txtRid.setText("");
+        textDist.setText("");
+        txtSloc.setText("");
+        txtEloc.setText("");
     }//GEN-LAST:event_btnDelActionPerformed
 
     private void btnUpdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdActionPerformed
         int selectedRow = jTableR.getSelectedRow();
-       if (selectedRow == -1)
+        
+        if (selectedRow == -1)
         {
-        JOptionPane.showMessageDialog(this, "Please select a row to update.");
-        return;
+            JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            return;
         }
        
         DefaultTableModel model = (DefaultTableModel) jTableR.getModel();

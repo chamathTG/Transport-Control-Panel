@@ -22,7 +22,8 @@ public class AlertPanel extends javax.swing.JPanel {
     /**
      * Creates new form AlertPanel
      */
-    public AlertPanel() {
+    public AlertPanel()
+    {
         initComponents();
     }
 
@@ -161,7 +162,6 @@ public class AlertPanel extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(this, "Please enter all the details");
         }
-        
         else
         {
             String data[] = {txtId.getText(),txtD.getText(),txtT.getText(),txtAm.getText()};
@@ -181,26 +181,25 @@ public class AlertPanel extends javax.swing.JPanel {
         DefaultTableModel tbModel = (DefaultTableModel)jTable1A.getModel();
         
         if(jTable1A.getSelectedRowCount()==1)
-       {
-           tbModel.removeRow(jTable1A.getSelectedRow());
-       }
-        
+        {
+            tbModel.removeRow(jTable1A.getSelectedRow());
+        } 
         else
-       {
-           if(jTable1A.getSelectedRow()==0)
-           {
-               JOptionPane.showMessageDialog(this, "The table is empty");
-           } 
-           else
-           {
-               JOptionPane.showMessageDialog(this, "Please select a single row to delete");
-           }
-       }
+        {
+            if(jTable1A.getSelectedRow()==0)
+            {
+                JOptionPane.showMessageDialog(this, "The table is empty");
+            } 
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Please select a single row to delete");
+            }
+        }
         
-            txtId.setText("");
-            txtD.setText("");
-            txtT.setText("");
-            txtAm.setText("");
+        txtId.setText("");
+        txtD.setText("");
+        txtT.setText("");
+        txtAm.setText("");
     }//GEN-LAST:event_btnDelActionPerformed
 
     private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
@@ -214,7 +213,7 @@ public class AlertPanel extends javax.swing.JPanel {
             {//Rows Table
                 for(int j = 0; j<jTable1A.getColumnCount(); j++)
                 {
-                  bw.write(jTable1A.getValueAt(i, j).toString()+" ");
+                    bw.write(jTable1A.getValueAt(i, j).toString()+" ");
                 }
                 bw.newLine();
             }
@@ -225,7 +224,7 @@ public class AlertPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Saved successfully.");
             
         }
-        catch (IOException ex)
+        catch(IOException ex)
         {
             Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
