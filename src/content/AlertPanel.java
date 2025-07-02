@@ -4,6 +4,15 @@
  */
 package content;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hirusha
@@ -30,16 +39,16 @@ public class AlertPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtT = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
+        txtD = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAm = new javax.swing.JTextArea();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
+        btnSend = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable1A = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,33 +73,35 @@ public class AlertPanel extends javax.swing.JPanel {
         jLabel6.setText("Date");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, -1, -1));
 
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 153, 32));
+        txtT.setBackground(new java.awt.Color(255, 255, 255));
+        txtT.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        txtT.setForeground(new java.awt.Color(0, 0, 0));
+        txtT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtT, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 330, 32));
 
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField4.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 153, 32));
+        txtId.setBackground(new java.awt.Color(255, 255, 255));
+        txtId.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        txtId.setForeground(new java.awt.Color(0, 0, 0));
+        txtId.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 153, 32));
 
-        jTextField5.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField5.setFont(new java.awt.Font("Poppins", 0, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 153, 32));
+        txtD.setBackground(new java.awt.Color(255, 255, 255));
+        txtD.setFont(new java.awt.Font("Poppins", 0, 17)); // NOI18N
+        txtD.setForeground(new java.awt.Color(0, 0, 0));
+        txtD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        add(txtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 153, 32));
 
         jScrollPane1.setBackground(new java.awt.Color(204, 204, 204));
+        jScrollPane1.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtAm.setBackground(new java.awt.Color(255, 255, 255));
+        txtAm.setColumns(20);
+        txtAm.setFont(new java.awt.Font("Poppins", 0, 16)); // NOI18N
+        txtAm.setForeground(new java.awt.Color(0, 0, 0));
+        txtAm.setRows(5);
+        txtAm.setBorder(null);
+        jScrollPane1.setViewportView(txtAm);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 340, 140));
 
@@ -99,25 +110,40 @@ public class AlertPanel extends javax.swing.JPanel {
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("SAVE ALERT");
         jButton2.setBorder(null);
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 160, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, 160, 40));
 
-        jButton3.setBackground(new java.awt.Color(249, 93, 44));
-        jButton3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("DELETE");
-        jButton3.setActionCommand("");
-        jButton3.setBorder(null);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 160, 40));
+        btnDel.setBackground(new java.awt.Color(249, 93, 44));
+        btnDel.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(255, 255, 255));
+        btnDel.setText("DELETE");
+        btnDel.setActionCommand("");
+        btnDel.setBorder(null);
+        btnDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelActionPerformed(evt);
+            }
+        });
+        add(btnDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 160, 40));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 0));
-        jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("SEND");
-        jButton4.setActionCommand("");
-        jButton4.setBorder(null);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 160, 40));
+        btnSend.setBackground(new java.awt.Color(0, 0, 0));
+        btnSend.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
+        btnSend.setForeground(new java.awt.Color(255, 255, 255));
+        btnSend.setText("SEND");
+        btnSend.setActionCommand("");
+        btnSend.setBorder(null);
+        btnSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSendActionPerformed(evt);
+            }
+        });
+        add(btnSend, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 160, 40));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1A.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -125,26 +151,102 @@ public class AlertPanel extends javax.swing.JPanel {
                 "AlertID", "Date", "Title", "Massage"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTable1A);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 680, 150));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(txtId.getText().equals("")||txtD.getText().equals("")||txtT.getText().equals("")||txtAm.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(this, "Please enter all the details");
+        }
+        
+        else
+        {
+            String data[] = {txtId.getText(),txtD.getText(),txtT.getText(),txtAm.getText()};
+            DefaultTableModel tbModel = (DefaultTableModel)jTable1A.getModel();
+               
+            tbModel.addRow(data);
+            JOptionPane.showMessageDialog(this, "Data added successfully");
+               
+            txtId.setText("");
+            txtD.setText("");
+            txtT.setText("");
+            txtAm.setText("");
+        }   
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelActionPerformed
+        DefaultTableModel tbModel = (DefaultTableModel)jTable1A.getModel();
+        
+        if(jTable1A.getSelectedRowCount()==1)
+       {
+           tbModel.removeRow(jTable1A.getSelectedRow());
+       }
+        
+        else
+       {
+           if(jTable1A.getSelectedRow()==0)
+           {
+               JOptionPane.showMessageDialog(this, "The table is empty");
+           } 
+           else
+           {
+               JOptionPane.showMessageDialog(this, "Please select a single row to delete");
+           }
+       }
+        
+            txtId.setText("");
+            txtD.setText("");
+            txtT.setText("");
+            txtAm.setText("");
+    }//GEN-LAST:event_btnDelActionPerformed
+
+    private void btnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendActionPerformed
+        File file = new File("data/alert_data.txt");
+        try
+        {
+            FileWriter fw = new FileWriter("data/alert_data.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i=0; i<jTable1A.getRowCount(); i++)
+            {//Rows Table
+                for(int j = 0; j<jTable1A.getColumnCount(); j++)
+                {
+                  bw.write(jTable1A.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+            JOptionPane.showMessageDialog(this, "Saved successfully.");
+            
+        }
+        catch (IOException ex)
+        {
+            Logger.getLogger(AssetPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Failed to save. Error: " + ex.getMessage());
+        }
+    }//GEN-LAST:event_btnSendActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnSend;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTable jTable1A;
+    private javax.swing.JTextArea txtAm;
+    private javax.swing.JTextField txtD;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtT;
     // End of variables declaration//GEN-END:variables
 }
