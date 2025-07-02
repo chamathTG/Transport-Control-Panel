@@ -198,6 +198,7 @@ public class Dashboard extends javax.swing.JFrame
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         Login move = new Login();
         move.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**

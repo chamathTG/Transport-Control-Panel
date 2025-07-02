@@ -70,6 +70,7 @@ public class Login extends javax.swing.JFrame
         txtUser.setForeground(new java.awt.Color(0, 0, 0));
         txtUser.setToolTipText("");
         txtUser.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        txtUser.setCaretColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 289, 50));
 
         btnLogin.setBackground(new java.awt.Color(249, 93, 44));
@@ -99,6 +100,7 @@ public class Login extends javax.swing.JFrame
         txtPass.setBackground(new java.awt.Color(255, 255, 255));
         txtPass.setForeground(new java.awt.Color(0, 0, 0));
         txtPass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtPass.setCaretColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 290, 50));
 
         backgroundLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userLogin/loginimg.png"))); // NOI18N
@@ -138,6 +140,7 @@ public class Login extends javax.swing.JFrame
             {
                 Dashboard move = new Dashboard();
                 move.setVisible(true);
+                dispose();
             }
             else
             {
