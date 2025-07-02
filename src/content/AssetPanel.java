@@ -57,12 +57,9 @@ public class AssetPanel extends javax.swing.JPanel {
         txtType = new javax.swing.JTextField();
         txtRouteId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnDel = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         btnUpdate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -110,14 +107,6 @@ public class AssetPanel extends javax.swing.JPanel {
         jLabel3.setText("Route ID");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 80, 30));
 
-        jButton1.setBackground(new java.awt.Color(249, 93, 44));
-        jButton1.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VIEW SCHEDULE");
-        jButton1.setActionCommand("");
-        jButton1.setBorder(null);
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 180, 40));
-
         btnAdd.setBackground(new java.awt.Color(249, 93, 44));
         btnAdd.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
@@ -153,18 +142,6 @@ public class AssetPanel extends javax.swing.JPanel {
             }
         });
         add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 100, 40));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ScheduleId", "No", "Date", "Time"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 400, 120));
 
         btnUpdate.setBackground(new java.awt.Color(249, 93, 44));
         btnUpdate.setFont(new java.awt.Font("Poppins", 1, 19)); // NOI18N
@@ -284,13 +261,10 @@ public class AssetPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDel;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable1Asset;
     private javax.swing.JTextField txtNo;
     private javax.swing.JTextField txtRouteId;

@@ -26,8 +26,6 @@ public class RoutePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -37,7 +35,6 @@ public class RoutePanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -47,18 +44,6 @@ public class RoutePanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(821, 612));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "RouteID", "Type", "No"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 720, 210));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
@@ -71,7 +56,7 @@ public class RoutePanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 500, 110, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 500, 110, 40));
 
         jLabel1.setFont(new java.awt.Font("Poppins SemiBold", 0, 19)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -127,13 +112,6 @@ public class RoutePanel extends javax.swing.JPanel {
         jLabel4.setText("Distance");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, 140, -1));
 
-        jButton2.setBackground(new java.awt.Color(249, 93, 44));
-        jButton2.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("VIEW ASSET");
-        jButton2.setBorder(null);
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 140, 40));
-
         jButton3.setBackground(new java.awt.Color(249, 93, 44));
         jButton3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,10 +129,7 @@ public class RoutePanel extends javax.swing.JPanel {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "RouteID", "Distance", "Start", "End"
@@ -162,7 +137,7 @@ public class RoutePanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 380, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 720, 220));
 
         jButton5.setBackground(new java.awt.Color(249, 93, 44));
         jButton5.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
@@ -192,7 +167,6 @@ public class RoutePanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -200,9 +174,7 @@ public class RoutePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

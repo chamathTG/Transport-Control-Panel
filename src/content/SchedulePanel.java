@@ -38,7 +38,7 @@ public class SchedulePanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableShedule = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -99,23 +99,23 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 130, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 140, 40));
 
         jButton3.setBackground(new java.awt.Color(249, 93, 44));
         jButton3.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("DELETE");
         jButton3.setBorder(null);
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 130, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
 
         jButton4.setBackground(new java.awt.Color(249, 93, 49));
         jButton4.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("UPDATE");
         jButton4.setBorder(null);
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 130, 40));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 440, 140, 40));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableShedule.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -123,7 +123,7 @@ public class SchedulePanel extends javax.swing.JPanel {
                 "ScheduleID", "No", "Date", "Time"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTableShedule);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 720, 190));
 
@@ -137,7 +137,7 @@ public class SchedulePanel extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 130, 40));
+        add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 490, 140, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -163,7 +163,7 @@ public class SchedulePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTableShedule;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
