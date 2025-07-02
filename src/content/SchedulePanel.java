@@ -208,7 +208,7 @@ public class SchedulePanel extends javax.swing.JPanel {
         File file = new File("data/schedule_data.txt");
         try
         {
-            FileWriter fw = new FileWriter("schedule_data.txt");
+            FileWriter fw = new FileWriter("data/schedule_data.txt");
             BufferedWriter bw = new BufferedWriter(fw);
             
             for(int i=0; i<jTableShedule.getRowCount(); i++)
