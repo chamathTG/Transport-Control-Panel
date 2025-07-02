@@ -5,6 +5,7 @@
 package userLogin;
 
 import javax.swing.JOptionPane;
+import dashboard.Dashboard;
 
 /**
  *
@@ -133,7 +134,22 @@ public class Login extends javax.swing.JFrame
         }
         else
         {
-            JOptionPane.showMessageDialog(null, "Incorrect User ID or Password!","Message",JOptionPane.ERROR_MESSAGE);
+            if(txtUser.getText().equals("admin")&&txtPass.getText().equals("123"))
+            {
+                Dashboard move = new Dashboard();
+                move.setVisible(true);
+            }
+            else
+            {
+                if(txtUser.getText().equals("admin"))
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect Password!","Message",JOptionPane.ERROR_MESSAGE);
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Incorrect User ID or Password!","Message",JOptionPane.ERROR_MESSAGE);
+                }
+            }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
